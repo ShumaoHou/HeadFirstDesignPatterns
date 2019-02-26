@@ -1,9 +1,11 @@
-package StrategyPattern;
+package strategy;
 
 /**
  * 模型鸭类
+ * @author Shumao
+ * @date 2019/2/26 10:03
  */
-public class ModelDuck extends Duck {
+public class ModelDuck extends BaseDuck {
 
     public ModelDuck() {
         // 不会飞

@@ -1,21 +1,21 @@
-import StrategyPattern.Duck;
-import StrategyPattern.FlyRocketPowered;
-import StrategyPattern.MallardDuck;
-import StrategyPattern.ModelDuck;
+import strategy.BaseDuck;
+import strategy.FlyRocketPowered;
+import strategy.MallardDuck;
+import strategy.ModelDuck;
 
 public class Main {
     public static void main(String[] args) {
         /*
-        StrategyPattern-Duck
+        strategy-BaseDuck
          */
-        System.out.println("*** StrategyPattern-MallardDuck ***");
-        Duck mallard = new MallardDuck();
+        System.out.println("*** strategy-MallardDuck ***");
+        BaseDuck mallard = new MallardDuck();
         mallard.performFly();
         mallard.performQuack();
         mallard.display();
         mallard.swim();
-        System.out.println("*** StrategyPattern-ModelDuck ***");
-        Duck model = new ModelDuck();
+        System.out.println("*** strategy-ModelDuck ***");
+        BaseDuck model = new ModelDuck();
         model.performFly();
         model.setFlyBehavior(new FlyRocketPowered());
         model.performFly();

@@ -1,9 +1,11 @@
-package StrategyPattern;
+package strategy;
 
 /**
  * 绿头鸭类
+ * @author Shumao
+ * @date 2019/2/26 10:03
  */
-public class MallardDuck extends Duck {
+public class MallardDuck extends BaseDuck {
 
     public MallardDuck() {
         // 会飞

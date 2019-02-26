@@ -1,16 +1,18 @@
-package StrategyPattern;
+package strategy;
 
 /**
  * 鸭子抽象类
+ * @author Shumao
+ * @date 2019/2/26 10:03
  */
-public abstract class Duck {
+public abstract class BaseDuck {
 
-    // 飞行行为
+    /** 飞行行为 */
     FlyBehavior mFlyBehavior;
-    // 叫声行为
+    /** 叫声行为 */
     QuackBehavior mQuackBehavior;
 
-    public Duck() {
+    public BaseDuck() {
 
     }
 
