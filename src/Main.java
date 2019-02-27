@@ -8,6 +8,11 @@ import strategy.FlyRocketPowered;
 import strategy.MallardDuck;
 import strategy.ModelDuck;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 /**
  * Main测试程序
  * @author Shumao
@@ -67,6 +72,7 @@ public class Main {
         System.out.println(beverage.getDescription() + " $" + beverage.cost());
         beverage = new Whip(beverage);
         System.out.println(beverage.getDescription() + " $" + beverage.cost());
+
         System.out.println("\n*** observer-BeverageHouseBlend ***");
         BaseBeverage beverage1 = new HouseBlend();
         System.out.println(beverage1.getDescription() + " $" + beverage1.cost());
@@ -76,5 +82,21 @@ public class Main {
         System.out.println(beverage1.getDescription() + " $" + beverage1.cost());
         beverage1 = new Whip(beverage1);
         System.out.println(beverage1.getDescription() + " $" + beverage1.cost());
+
+        System.out.println("\n*** observer-LowerCaseInputStream ***");
+        int c;
+        try {
+            InputStream in =
+                    new LowerCaseInputStream(
+                            new BufferedInputStream(
+                                    new FileInputStream("src\\decorator\\test.txt")));
+            while ((c = in.read()) >= 0) {
+                System.out.print((char)c);
+            }
+            System.out.println();
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
