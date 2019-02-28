@@ -3,6 +3,7 @@ import observer.CurrentConditionsDisplay;
 import observer.CurrentConditionsDisplayJava;
 import observer.WeatherData;
 import observer.WeatherDataJava;
+import singleton.Singleton;
 import strategy.BaseDuck;
 import strategy.FlyRocketPowered;
 import strategy.MallardDuck;
@@ -98,5 +99,12 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        /*
+        singleton
+         */
+        System.out.println("\n*** singleton ***");
+        Singleton singleton = Singleton.getInstance();
+        singleton.print();
     }
 }

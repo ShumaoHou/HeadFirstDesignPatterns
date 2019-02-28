@@ -4,3 +4,4 @@
 ### 1. Strategy Pattern 策略模式
 ### 2. Observer Pattern 观察者模式
 ### 3. Decorator Pattern 装饰者模式
+### 4. Singleton Pattern 单件模式
