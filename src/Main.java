@@ -1,4 +1,7 @@
 import decorator.*;
+import factory.BasePizza;
+import factory.BasePizzaStore;
+import factory.NYPizzaStore;
 import observer.CurrentConditionsDisplay;
 import observer.CurrentConditionsDisplayJava;
 import observer.WeatherData;
@@ -106,5 +109,14 @@ public class Main {
         System.out.println("\n*** singleton ***");
         Singleton singleton = Singleton.getInstance();
         singleton.print();
+
+        /*
+        factory-Pizza
+         */
+        System.out.println("\n*** factory-Pizza ***");
+        BasePizzaStore nyStore = new NYPizzaStore();
+
+        BasePizza pizza = nyStore.orderPizza("cheese");
+        System.out.println("Order a " + pizza.getName());
     }
 }
