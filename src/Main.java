@@ -1,3 +1,4 @@
+import command.*;
 import decorator.*;
 import factory.BasePizza;
 import factory.BasePizzaStore;
@@ -118,5 +119,34 @@ public class Main {
 
         BasePizza pizza = nyStore.orderPizza("cheese");
         System.out.println("Order a " + pizza.getName());
+
+        /*
+        command-simple
+         */
+        System.out.println("\n*** command-simple ***");
+        SimpleRemoteControl remote = new SimpleRemoteControl();
+        Light light = new Light();
+        GarageDoor door = new GarageDoor();
+        LightOnCommand lightOn = new LightOnCommand(light);
+        GarageDoorOpenCommand doorOpen = new GarageDoorOpenCommand(door);
+
+        remote.setCommand(lightOn);
+        remote.buttonWasPressed();
+        remote.setCommand(doorOpen);
+        remote.buttonWasPressed();
+        /*
+        command-remote
+         */
+        System.out.println("\n*** command-remote ***");
+        RemoteControl remoteControl = new RemoteControl();
+
+        LightOffCommnad lightOff = new LightOffCommnad(light);
+        remoteControl.setCommand(0, lightOn, lightOff);
+        System.out.println(remoteControl);
+
+        remoteControl.onButtonWasPressed(0);
+        remoteControl.offButtonWasPressed(0);
+
+        remoteControl.undoButtonWasPressed();
     }
 }
