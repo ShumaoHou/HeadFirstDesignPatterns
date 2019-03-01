@@ -1,3 +1,6 @@
+import adapter.Duck;
+import adapter.TurkeyAdapter;
+import adapter.WildTurkey;
 import command.*;
 import decorator.*;
 import factory.BasePizza;
@@ -148,5 +151,23 @@ public class Main {
         remoteControl.offButtonWasPressed(0);
 
         remoteControl.undoButtonWasPressed();
+
+        /*
+        adapter-turkey
+         */
+        System.out.println("\n*** adapter-turkey ***");
+        adapter.MallardDuck mallardDuck = new adapter.MallardDuck();
+        WildTurkey turkey = new WildTurkey();
+        Duck turkeyAdapter = new TurkeyAdapter(turkey);
+
+        System.out.println("The turkey says:");
+        turkey.gobble();
+        turkey.fly();
+        System.out.println("The duck says:");
+        mallardDuck.quack();
+        mallardDuck.fly();
+        System.out.println("The turkeyAdapter says:");
+        turkeyAdapter.quack();
+        turkeyAdapter.fly();
     }
 }
