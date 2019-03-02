@@ -1,3 +1,6 @@
+import Template.Coffee;
+import Template.MyFrame;
+import Template.Tea;
 import adapter.Duck;
 import adapter.TurkeyAdapter;
 import adapter.WildTurkey;
@@ -23,6 +26,7 @@ import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 
 /**
  * Main测试程序
@@ -182,6 +186,32 @@ public class Main {
         HomeTheaterFacade homeTheaterFacade = new HomeTheaterFacade(dvdPlayer, screen);
         homeTheaterFacade.watchMovie();
         homeTheaterFacade.endMovie();
-        
+
+        /*
+        template
+         */
+        System.out.println("\n*** template-coffee ***");
+        Tea myTea = new Tea();
+        myTea.prepareRecipe();
+        Coffee myCoffee = new Coffee();
+        myCoffee.prepareRecipe();
+        System.out.println("\n*** template-duck ***");
+        Template.Duck[] ducks = {
+                new Template.Duck("a",8),
+                new Template.Duck("b", 2),
+                new Template.Duck("c", 7),
+                new Template.Duck("d", 10),
+        };
+        System.out.println("Before sort:");
+        for (Template.Duck d : ducks) {
+            System.out.println(d);
+        }
+        Arrays.sort(ducks);
+        System.out.println("After sort:");
+        for (Template.Duck d : ducks) {
+            System.out.println(d);
+        }
+        System.out.println("\n*** template-MyFrame ***");
+//        MyFrame myFrame = new MyFrame("Head First Frame");
     }
 }
