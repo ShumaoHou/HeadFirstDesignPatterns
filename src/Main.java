@@ -3,6 +3,9 @@ import adapter.TurkeyAdapter;
 import adapter.WildTurkey;
 import command.*;
 import decorator.*;
+import facade.DvdPlayer;
+import facade.HomeTheaterFacade;
+import facade.Screen;
 import factory.BasePizza;
 import factory.BasePizzaStore;
 import factory.NYPizzaStore;
@@ -169,5 +172,16 @@ public class Main {
         System.out.println("The turkeyAdapter says:");
         turkeyAdapter.quack();
         turkeyAdapter.fly();
+
+        /*
+        facade-movie
+         */
+        System.out.println("\n*** facade-movie ***");
+        DvdPlayer dvdPlayer = new DvdPlayer();
+        Screen screen = new Screen();
+        HomeTheaterFacade homeTheaterFacade = new HomeTheaterFacade(dvdPlayer, screen);
+        homeTheaterFacade.watchMovie();
+        homeTheaterFacade.endMovie();
+        
     }
 }
