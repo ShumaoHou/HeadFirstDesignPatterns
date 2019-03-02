@@ -17,6 +17,7 @@ import observer.CurrentConditionsDisplayJava;
 import observer.WeatherData;
 import observer.WeatherDataJava;
 import singleton.Singleton;
+import state.GumballMachine;
 import strategy.BaseDuck;
 import strategy.FlyRocketPowered;
 import strategy.MallardDuck;
@@ -213,5 +214,22 @@ public class Main {
         }
         System.out.println("\n*** template-MyFrame ***");
 //        MyFrame myFrame = new MyFrame("Head First Frame");
+
+        /*
+        state-winner
+         */
+        System.out.println("\n*** state-winner ***");
+        GumballMachine gumballMachine = new GumballMachine(5);
+        System.out.println(gumballMachine);
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+
+        System.out.println(gumballMachine);
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        System.out.println(gumballMachine);
+
     }
 }
