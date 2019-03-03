@@ -12,6 +12,9 @@ import facade.Screen;
 import factory.BasePizza;
 import factory.BasePizzaStore;
 import factory.NYPizzaStore;
+import iterator.DinerMenu;
+import iterator.PancakeMenu;
+import iterator.Waitress;
 import observer.CurrentConditionsDisplay;
 import observer.CurrentConditionsDisplayJava;
 import observer.WeatherData;
@@ -231,5 +234,13 @@ public class Main {
         gumballMachine.turnCrank();
         System.out.println(gumballMachine);
 
+        /*
+        iterator
+         */
+        System.out.println("\n*** iterator ***");
+        PancakeMenu pancakeMenu = new PancakeMenu();
+        DinerMenu dinerMenu = new DinerMenu();
+        Waitress waitress = new Waitress(dinerMenu, pancakeMenu);
+        waitress.printMenu();
     }
 }
